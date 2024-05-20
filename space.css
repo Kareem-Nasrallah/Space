@@ -1,0 +1,89 @@
+*{
+    text-decoration: none;
+    color: #fff;
+    list-style: none;
+    padding: 0;margin: 0;
+    font-family: system-ui;
+}
+body{
+    height: 100vh;
+    background-image: url(stars1.png),
+    linear-gradient(rgb(8, 0, 25),rgb(17, 0, 34));
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+}
+ul li a{
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 4px;
+    display: block;
+    padding: 10px;
+    border-radius: 20px;
+    width: 150px;
+    transition: .5s;
+    position: relative;
+    z-index: 10;
+    font-weight: 500;
+}
+span{
+    display: block;
+    background: darkblue;
+    padding: 15px;
+    width: 120px;
+    transition: .5s;
+    border-radius: 20px;
+    text-align: center;
+}
+ul:hover li a span{
+    background: rgb(80, 1, 100);
+}
+ul:hover li a{
+    opacity: 0;
+}
+ul li a:hover{
+    transform: scale(1.5);
+    opacity: 1;
+}
+ul li::after{
+    content: attr(data);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: .5s;
+    font-size: 80px;
+    letter-spacing:40px;
+    pointer-events: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+li:hover::after{
+    opacity: .5;
+    letter-spacing: 4px;
+}
+ul li::before{
+    content: '';
+    width: 180px;
+    height: 80px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,90%);
+    border-radius: 50%;
+    box-shadow: 0 0 80px orangered ;
+    opacity: 0;
+    transition: .5s;
+}
+li:hover::before{
+    opacity: .5;
+    width: 80px;
+}
